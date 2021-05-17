@@ -1,5 +1,10 @@
 package DSA;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.NoSuchElementException;
+
 public class BinaryTree {
 
     public static class node {
@@ -96,7 +101,7 @@ public class BinaryTree {
         if (root.leftChild == null && root.rightChild == null)
             return 0;
 
-        return 1+ Math.max(height(root.leftChild), height(root.rightChild));
+        return 1 + Math.max(height(root.leftChild), height(root.rightChild));
     }
 
     public int minimum() {
@@ -113,23 +118,64 @@ public class BinaryTree {
         return Math.min(Math.min(left, right), root.value);
     }
 
-    public boolean equals(BinaryTree tree2){
+    public boolean equals(BinaryTree tree2) {
         return equals(root, tree2.root);
     }
 
-    private boolean equals(node tree1, node tree2){
-        if(tree1 == null && tree2 == null)
+    private boolean equals(node tree1, node tree2) {
+        if (tree1 == null && tree2 == null)
             return true;
 
-        if(tree1!=null && tree2!=null){
+        if (tree1 != null && tree2 != null) {
             return tree1.value == tree2.value
-                    && equals(tree1.leftChild,tree2.leftChild)
+                    && equals(tree1.leftChild, tree2.leftChild)
                     && equals(tree1.rightChild, tree2.rightChild);
         }
 
         return false;
 
-       }
+    }
 
+    public boolean isBinarySearchTree() {
+        return isBinarySearchTree(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+    }
+
+    private boolean isBinarySearchTree(node root, int min, int max) {
+        if (root == null)
+            return true;
+
+        if (root.value > max || root.value < min)
+            return false;
+
+
+        return isBinarySearchTree(root.leftChild, min, root.value) && isBinarySearchTree(root.rightChild, root.value, max);
+
+    }
+
+    public void swapRoot(){
+        var temp = root;
+        root = root.leftChild;
+        root.leftChild = temp;
+    }
+
+    public void nodesAtDistance(int distance){
+        var list = new ArrayList<Integer>();
+        System.out.println(Arrays.toString(nodesAtDistance(root, distance, list).toArray()));
+    }
+
+    private ArrayList<Integer> nodesAtDistance(node root , int distance , ArrayList<Integer> list){
+        if(root == null)
+            return list;
+
+        if(distance == 0 ){
+            list.add(root.value);
+            return list;
+        }
+
+        nodesAtDistance(root.leftChild , distance-1, list);
+        nodesAtDistance(root.rightChild, distance-1, list);
+
+        return list;
+    }
 
 }

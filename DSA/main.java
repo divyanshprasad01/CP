@@ -13,10 +13,11 @@ public class main {
        tree.insert(10);
        tree.insert(24);
        tree.insert(11);
-       tree.insert(155);
-       tree.insert(1111);
-       tree.insert(1542);
+//       tree.insert(155);
+//       tree.insert(1111);
+//       tree.insert(1542);
        tree.insert(1);
+       tree.insert(5);
 
        tree2.insert(50);
        tree2.insert(70);
@@ -51,5 +52,9 @@ public class main {
        System.out.println(tree.height());
 
        System.out.println(tree.equals(tree2));
+//       tree.swapRoot();
+       System.out.println(tree.isBinarySearchTree());
+
+       tree.nodesAtDistance(3);
     }
 }
