@@ -1,27 +1,55 @@
 package DSA;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
 
 public class main {
     public static void main(String [] args){
 
-        var node = new LinkedLists();
+       BinaryTree tree = new BinaryTree();
+       BinaryTree tree2 = new BinaryTree();
 
-        node.isEmpty();
-//        node.deleteFirst();
-        node.addFirst(50);
-        node.addLast(60);
-        node.addLast(70);
-        node.addLast(80);
-        node.addLast(90);
-        node.addLast(100);
-        System.out.println(Arrays.toString(node.toArray()));
-        node.isEmpty();
-//        node.deleteFirst();
-        node.reverseList();
-        System.out.println(Arrays.toString(node.toArray()));
+       tree.insert(50);
+       tree.insert(70);
+       tree.insert(1000);
+       tree.insert(10);
+       tree.insert(24);
+       tree.insert(11);
+       tree.insert(155);
+       tree.insert(1111);
+       tree.insert(1542);
+       tree.insert(1);
+
+       tree2.insert(50);
+       tree2.insert(70);
+       tree2.insert(1000);
+       tree2.insert(10);
+       tree2.insert(24);
+       tree2.insert(11);
+       tree2.insert(155);
+       tree2.insert(1111);
+       tree2.insert(1542);
+       tree2.insert(1);
 
 
+       System.out.println(tree.find(70));
+       System.out.println(tree.find(1000));
+       System.out.println(tree.find(1));
+
+       tree.traversePreOrder();
+       System.out.println();
+       tree.traverseInOrder();
+       System.out.println();
+
+       System.out.println(tree.height());
+
+       System.out.println(tree.minimum());
+
+//       tree.insert(1);
+//       System.out.println(tree.minimum());
+//       tree.insert(5);
+//       System.out.println(tree.minimum());
+
+       System.out.println(tree.height());
+
+       System.out.println(tree.equals(tree2));
     }
 }
