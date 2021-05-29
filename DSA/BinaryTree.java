@@ -1,21 +1,11 @@
 package DSA;
 
-import java.lang.reflect.Array;
+
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.NoSuchElementException;
+
 
 public class BinaryTree {
-
-    public static class node {
-        int value;
-        node leftChild;
-        node rightChild;
-
-        public node(int value) {
-            this.value = value;
-        }
-    }
 
     private node root;
 
@@ -152,30 +142,34 @@ public class BinaryTree {
 
     }
 
-    public void swapRoot(){
-        var temp = root;
-        root = root.leftChild;
-        root.leftChild = temp;
-    }
-
-    public void nodesAtDistance(int distance){
+    public void nodesAtDistance(int distance) {
         var list = new ArrayList<Integer>();
         System.out.println(Arrays.toString(nodesAtDistance(root, distance, list).toArray()));
     }
 
-    private ArrayList<Integer> nodesAtDistance(node root , int distance , ArrayList<Integer> list){
-        if(root == null)
+    private ArrayList<Integer> nodesAtDistance(node root, int distance, ArrayList<Integer> list) {
+        if (root == null)
             return list;
 
-        if(distance == 0 ){
+        if (distance == 0) {
             list.add(root.value);
             return list;
         }
 
-        nodesAtDistance(root.leftChild , distance-1, list);
-        nodesAtDistance(root.rightChild, distance-1, list);
+        nodesAtDistance(root.leftChild, distance - 1, list);
+        nodesAtDistance(root.rightChild, distance - 1, list);
 
         return list;
+    }
+
+    public static class node {
+        int value;
+        node leftChild;
+        node rightChild;
+
+        public node(int value) {
+            this.value = value;
+        }
     }
 
 }
