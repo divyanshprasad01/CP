@@ -5,17 +5,17 @@ public class main {
     public static void main(String [] args){
 
        AvlTree tree = new AvlTree();
-       BinaryTree tree2 = new BinaryTree();
 
-       tree.insert(50);
-       tree.insert(70);
-       tree.insert(1000);
+
        tree.insert(10);
+       tree.insert(30);
+       tree.insert(20);
+       tree.insert(100);
        tree.insert(24);
        tree.insert(11);
-//       tree.insert(155);
-//       tree.insert(1111);
-//       tree.insert(1542);
+       tree.insert(155);
+       tree.insert(1111);
+       tree.insert(1542);
        tree.insert(1);
        tree.insert(5);
 
