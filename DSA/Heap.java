@@ -13,6 +13,8 @@ public class Heap {
 
         while(heapTree.get(parentIndex) < heapTree.get(indexData)){
             swap(indexData , parentIndex);
+            indexData = heapTree.indexOf(data);
+            parentIndex = getParentIndexOf(data);
         }
     }
 
