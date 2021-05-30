@@ -4,14 +4,14 @@ package DSA;
 public class main {
     public static void main(String [] args){
 
-       AvlTree tree = new AvlTree();
+       Heap tree = new Heap();
 
 
        tree.insert(10);
-       tree.insert(30);
+       tree.insert(15);
        tree.insert(20);
-       tree.insert(100);
-       tree.insert(24);
+       tree.insert(5);
+       tree.insert(4);
        tree.insert(11);
        tree.insert(155);
        tree.insert(1111);
