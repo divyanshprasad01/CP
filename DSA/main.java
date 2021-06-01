@@ -19,6 +19,11 @@ public class main {
        tree.insert(1);
        tree.insert(5);
 
+       tree.removeTop();
+       tree.removeTop();
+       tree.removeTop();
+       tree.removeTop();
+
 //       tree2.insert(50);
 //       tree2.insert(70);
 //       tree2.insert(1000);
